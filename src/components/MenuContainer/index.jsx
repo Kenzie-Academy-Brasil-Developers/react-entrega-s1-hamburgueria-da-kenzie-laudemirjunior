@@ -11,9 +11,9 @@ const MenuContainer = ({
     <div>
       <h1>Produtos</h1>
       <div className="produtos">
-        {filteredProducts.map((item) => {
+        {filteredProducts.map((item, index) => {
           return (
-            <div className="produto" id={item.id}>
+            <div className="produto" id={item.id} key={index}>
               <h3>{item.name}</h3>
               <p>{item.category}</p>
               <p>R$ {item.price}</p>
