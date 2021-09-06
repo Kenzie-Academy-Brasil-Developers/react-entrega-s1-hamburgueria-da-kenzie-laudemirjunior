@@ -13,6 +13,8 @@ const Product = ({ currentSale, setCurrentSale }) => {
           return (
             <div className="produtoVendido" key={index}>
               <h3>{item.name}</h3>
+              <img src={item.image} alt="" />
+
               <p>{item.category}</p>
               <p>R$ {item.price}</p>
               <button
