@@ -1,7 +1,5 @@
 import "./style.css";
 
-import { useState } from "react";
-
 const Product = ({ currentSale, setCurrentSale }) => {
   const handleClick = (removeItem) => {
     setCurrentSale(currentSale.filter((item) => item !== removeItem));
@@ -11,9 +9,9 @@ const Product = ({ currentSale, setCurrentSale }) => {
     <div>
       <h1>Carrinho</h1>
       <div className="produtosVendidos">
-        {currentSale.map((item) => {
+        {currentSale.map((item, index) => {
           return (
-            <div className="produtoVendido">
+            <div className="produtoVendido" key={index}>
               <h3>{item.name}</h3>
               <p>{item.category}</p>
               <p>R$ {item.price}</p>
