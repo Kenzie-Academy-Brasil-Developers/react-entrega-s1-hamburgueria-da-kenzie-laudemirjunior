@@ -3,6 +3,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 2px;
+  flex-basis: 400px;
 }
 
 .produto {
