@@ -106,9 +106,6 @@ function App() {
         currentSale={currentSale}
         setCurrentSale={setCurrentSale}
       />
-      <div>
-        <p>Estoque indisponível</p>
-      </div>
       <Valores currentSale={currentSale} setCurrentSale={setCurrentSale} />
     </div>
   );
