@@ -20,9 +20,11 @@
 }
 
 .botaoCompra {
-  width: 90px;
+  width: 130px;
+  height: 30px;
   background-color: #d7d8c9;
   border: 1px solid #d94c1a;
+  font-size: 14px;
 }
 
 .carrinho {

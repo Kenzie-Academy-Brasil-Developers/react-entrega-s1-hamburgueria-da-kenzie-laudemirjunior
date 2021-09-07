@@ -1,6 +1,8 @@
 import "./App.css";
 import { useState } from "react";
 import MenuContainer from "./components/MenuContainer";
+import Valores from "./components/Valores";
+import Navegacao from "./components/Navegacao";
 
 function App() {
   const [products] = useState([
@@ -83,37 +85,31 @@ function App() {
   const handleClick = (productId) => {
     if (!currentSale.includes(productId)) {
       setCurrentSale([...currentSale, productId]);
+    } else {
+      setTimeout(function () {
+        alert("Estoque indisponível");
+      }, 500);
     }
   };
 
   return (
     <div className="App">
       <h1>Hamburgueria</h1>
-      <header>
-        <input
-          className="imputBusca"
-          value={buscas}
-          onChange={(evt) => setBuscas(evt.target.value)}
-        ></input>
-        <button className="BotaoBusca" onClick={() => showProducts(buscas)}>
-          Buscar
-        </button>
-      </header>
+      <Navegacao
+        buscas={buscas}
+        setBuscas={setBuscas}
+        showProducts={showProducts}
+      />
       <MenuContainer
         filteredProducts={filteredProducts}
         handleClick={handleClick}
         currentSale={currentSale}
         setCurrentSale={setCurrentSale}
       />
-      <div className="valorTotal">
-        Total: R${" "}
-        {currentSale
-          .reduce(
-            (accumulator, valorAtual) => accumulator + Number(valorAtual.price),
-            0
-          )
-          .toFixed(2)}
+      <div>
+        <p>Estoque indisponível</p>
       </div>
+      <Valores currentSale={currentSale} setCurrentSale={setCurrentSale} />
     </div>
   );
 }
